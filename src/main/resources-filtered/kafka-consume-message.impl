@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<implementation:connectorImplementation xmlns:implementation="http://www.bonitasoft.org/ns/connector/implementation/6.0">
+  <implementationId>${kafka-consume-message.impl.id}</implementationId>
+  <implementationVersion>${kafka-consume-message.impl.version}</implementationVersion>
+  <definitionId>${kafka-consume-message.def.id}</definitionId>
+  <definitionVersion>${kafka-consume-message.def.version}</definitionVersion>
+  <implementationClassname>${kafka-consume-message.main-class}</implementationClassname>
+  <hasSources>false</hasSources>
+  <description>[BETA] Kafka Consume Message connector implementation</description>
+
+<!-- retrieved from the pom.xml at build time -->
+${connector-dependencies}
+
+</implementation:connectorImplementation>

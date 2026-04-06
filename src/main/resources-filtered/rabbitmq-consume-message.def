@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definition:ConnectorDefinition
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:definition="http://www.bonitasoft.org/ns/connector/definition/6.1">
+
+  <id>${rabbitmq-consume-message.def.id}</id>
+  <version>${rabbitmq-consume-message.def.version}</version>
+  <icon>kafka.png</icon>
+  <category icon="kafka.png" id="Kafka/RabbitMQ"/>
+
+  <input name="bootstrapServers" type="java.lang.String" mandatory="true"/>
+  <input name="rabbitmqUsername" type="java.lang.String" mandatory="false"/>
+  <input name="rabbitmqPassword" type="java.lang.String" mandatory="false"/>
+  <input name="rabbitmqVirtualHost" type="java.lang.String" mandatory="false" defaultValue="/"/>
+  <input name="rabbitmqSsl" type="java.lang.Boolean" mandatory="false" defaultValue="false"/>
+  <input name="queue" type="java.lang.String" mandatory="true"/>
+  <input name="autoAck" type="java.lang.Boolean" mandatory="false" defaultValue="true"/>
+  <input name="timeoutSeconds" type="java.lang.Integer" mandatory="false" defaultValue="30"/>
+  <input name="maxRetries" type="java.lang.Integer" mandatory="false" defaultValue="3"/>
+
+  <output name="success" type="java.lang.Boolean"/>
+  <output name="errorMessage" type="java.lang.String"/>
+  <output name="messageCount" type="java.lang.Integer"/>
+  <output name="messagesJson" type="java.lang.String"/>
+  <output name="source" type="java.lang.String"/>
+
+  <page id="connectionPage">
+    <widget xsi:type="definition:Text" id="bootstrapServersWidget" inputName="bootstrapServers"/>
+    <widget xsi:type="definition:Text" id="rabbitmqUsernameWidget" inputName="rabbitmqUsername"/>
+    <widget xsi:type="definition:Password" id="rabbitmqPasswordWidget" inputName="rabbitmqPassword"/>
+    <widget xsi:type="definition:Text" id="rabbitmqVirtualHostWidget" inputName="rabbitmqVirtualHost"/>
+    <widget xsi:type="definition:Checkbox" id="rabbitmqSslWidget" inputName="rabbitmqSsl"/>
+  </page>
+  <page id="operationPage">
+    <widget xsi:type="definition:Text" id="queueWidget" inputName="queue"/>
+    <widget xsi:type="definition:Checkbox" id="autoAckWidget" inputName="autoAck"/>
+  </page>
+  <page id="advancedPage">
+    <widget xsi:type="definition:Text" id="timeoutSecondsWidget" inputName="timeoutSeconds"/>
+    <widget xsi:type="definition:Text" id="maxRetriesWidget" inputName="maxRetries"/>
+  </page>
+</definition:ConnectorDefinition>

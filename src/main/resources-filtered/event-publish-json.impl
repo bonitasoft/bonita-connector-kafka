@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<implementation:connectorImplementation xmlns:implementation="http://www.bonitasoft.org/ns/connector/implementation/6.0">
+  <implementationId>${event-publish-json.impl.id}</implementationId>
+  <implementationVersion>${event-publish-json.impl.version}</implementationVersion>
+  <definitionId>${event-publish-json.def.id}</definitionId>
+  <definitionVersion>${event-publish-json.def.version}</definitionVersion>
+  <implementationClassname>${event-publish-json.main-class}</implementationClassname>
+  <hasSources>false</hasSources>
+  <description>[BETA] Event Publish JSON connector implementation</description>
+
+<!-- retrieved from the pom.xml at build time -->
+${connector-dependencies}
+
+</implementation:connectorImplementation>

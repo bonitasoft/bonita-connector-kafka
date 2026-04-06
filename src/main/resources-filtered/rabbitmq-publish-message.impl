@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<implementation:connectorImplementation xmlns:implementation="http://www.bonitasoft.org/ns/connector/implementation/6.0">
+  <implementationId>${rabbitmq-publish-message.impl.id}</implementationId>
+  <implementationVersion>${rabbitmq-publish-message.impl.version}</implementationVersion>
+  <definitionId>${rabbitmq-publish-message.def.id}</definitionId>
+  <definitionVersion>${rabbitmq-publish-message.def.version}</definitionVersion>
+  <implementationClassname>${rabbitmq-publish-message.main-class}</implementationClassname>
+  <hasSources>false</hasSources>
+  <description>[BETA] RabbitMQ Publish Message connector implementation</description>
+
+<!-- retrieved from the pom.xml at build time -->
+${connector-dependencies}
+
+</implementation:connectorImplementation>

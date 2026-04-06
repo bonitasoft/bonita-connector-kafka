@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definition:ConnectorDefinition
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:definition="http://www.bonitasoft.org/ns/connector/definition/6.1">
+
+  <id>${kafka-produce-message.def.id}</id>
+  <version>${kafka-produce-message.def.version}</version>
+  <icon>kafka.png</icon>
+  <category icon="kafka.png" id="Kafka/RabbitMQ"/>
+
+  <input name="bootstrapServers" type="java.lang.String" mandatory="true"/>
+  <input name="securityProtocol" type="java.lang.String" mandatory="false" defaultValue="PLAINTEXT"/>
+  <input name="saslMechanism" type="java.lang.String" mandatory="false"/>
+  <input name="saslUsername" type="java.lang.String" mandatory="false"/>
+  <input name="saslPassword" type="java.lang.String" mandatory="false"/>
+  <input name="topic" type="java.lang.String" mandatory="true"/>
+  <input name="messageKey" type="java.lang.String" mandatory="false"/>
+  <input name="messageValue" type="java.lang.String" mandatory="true"/>
+  <input name="timeoutSeconds" type="java.lang.Integer" mandatory="false" defaultValue="30"/>
+  <input name="maxRetries" type="java.lang.Integer" mandatory="false" defaultValue="3"/>
+
+  <output name="success" type="java.lang.Boolean"/>
+  <output name="errorMessage" type="java.lang.String"/>
+  <output name="destination" type="java.lang.String"/>
+  <output name="partition" type="java.lang.Integer"/>
+  <output name="offset" type="java.lang.Long"/>
+  <output name="timestamp" type="java.lang.Long"/>
+
+  <page id="connectionPage">
+    <widget xsi:type="definition:Text" id="bootstrapServersWidget" inputName="bootstrapServers"/>
+    <widget xsi:type="definition:Text" id="securityProtocolWidget" inputName="securityProtocol"/>
+    <widget xsi:type="definition:Text" id="saslMechanismWidget" inputName="saslMechanism"/>
+    <widget xsi:type="definition:Text" id="saslUsernameWidget" inputName="saslUsername"/>
+    <widget xsi:type="definition:Password" id="saslPasswordWidget" inputName="saslPassword"/>
+  </page>
+  <page id="operationPage">
+    <widget xsi:type="definition:Text" id="topicWidget" inputName="topic"/>
+    <widget xsi:type="definition:Text" id="messageKeyWidget" inputName="messageKey"/>
+    <widget xsi:type="definition:TextArea" id="messageValueWidget" inputName="messageValue"/>
+  </page>
+  <page id="advancedPage">
+    <widget xsi:type="definition:Text" id="timeoutSecondsWidget" inputName="timeoutSeconds"/>
+    <widget xsi:type="definition:Text" id="maxRetriesWidget" inputName="maxRetries"/>
+  </page>
+</definition:ConnectorDefinition>

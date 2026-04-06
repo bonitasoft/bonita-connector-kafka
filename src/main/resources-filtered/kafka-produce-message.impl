@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<implementation:connectorImplementation xmlns:implementation="http://www.bonitasoft.org/ns/connector/implementation/6.0">
+  <implementationId>${kafka-produce-message.impl.id}</implementationId>
+  <implementationVersion>${kafka-produce-message.impl.version}</implementationVersion>
+  <definitionId>${kafka-produce-message.def.id}</definitionId>
+  <definitionVersion>${kafka-produce-message.def.version}</definitionVersion>
+  <implementationClassname>${kafka-produce-message.main-class}</implementationClassname>
+  <hasSources>false</hasSources>
+  <description>[BETA] Kafka Produce Message connector implementation</description>
+
+<!-- retrieved from the pom.xml at build time -->
+${connector-dependencies}
+
+</implementation:connectorImplementation>

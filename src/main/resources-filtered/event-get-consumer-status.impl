@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<implementation:connectorImplementation xmlns:implementation="http://www.bonitasoft.org/ns/connector/implementation/6.0">
+  <implementationId>${event-get-consumer-status.impl.id}</implementationId>
+  <implementationVersion>${event-get-consumer-status.impl.version}</implementationVersion>
+  <definitionId>${event-get-consumer-status.def.id}</definitionId>
+  <definitionVersion>${event-get-consumer-status.def.version}</definitionVersion>
+  <implementationClassname>${event-get-consumer-status.main-class}</implementationClassname>
+  <hasSources>false</hasSources>
+  <description>[BETA] Event Get Consumer Status connector implementation</description>
+
+<!-- retrieved from the pom.xml at build time -->
+${connector-dependencies}
+
+</implementation:connectorImplementation>
